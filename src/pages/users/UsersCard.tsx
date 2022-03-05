@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { UsersData } from "./UsersData";
 import BackIcon from "../../assets/vectors/back.svg";
 import RoundIcon from "../../assets/vectors/round.svg";
-import ProfileIcon from "../../assets/vectors/profile.svg";
+// import ProfileIcon from "../../assets/vectors/profile.svg";
 import StarIcon from "../../assets/vectors/star.svg";
 import NoStarIcon from "../../assets/vectors/star-no.svg";
 

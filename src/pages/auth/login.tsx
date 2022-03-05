@@ -55,7 +55,7 @@ const Login = () => {
                     className="register-form-width"
                   />
                 </div>
-                <a href="#">Forgot password?</a>
+                <a href="/">Forgot password?</a>
                 <div className="register-form-text">
                   <button
                     className="form-started-btn"

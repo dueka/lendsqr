@@ -1,0 +1,15 @@
+$theme-colors: (
+  "primary": #39cdcc,
+);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  // default font
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+.d-none {
+  display: none !important;
+}

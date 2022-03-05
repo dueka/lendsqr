@@ -1,0 +1,233 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/colors" as c;
+@use "../base/typography";
+
+.table-container {
+  margin: 40px auto 0;
+}
+.btn-table {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  text-align: center;
+}
+
+.table {
+  width: 95%;
+  border-collapse: collapse;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-sizing: border-box;
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+
+  &-status {
+    background: c.color(cbPrimary-200);
+    border-radius: 100px;
+    font-size: 14px;
+    line-height: 16px;
+    align-items: center;
+    text-align: center;
+    padding: 5px !important;
+    position: absolute;
+    margin-top: -0.8rem;
+    margin-left: -1.5rem;
+  }
+
+  thead tr th {
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 600;
+    color: c.color(cbSecondary);
+    align-items: flex-end;
+    opacity: 1;
+    padding-bottom: 12px;
+    padding-top: 15px;
+    vertical-align: top;
+    text-transform: uppercase;
+    img {
+      width: 13px;
+    }
+  }
+  tbody tr {
+    height: 3rem;
+    cursor: pointer;
+  }
+
+  tbody tr td {
+    font-size: 14px;
+    letter-spacing: 0.35px;
+    font-weight: normal;
+    color: c.color(cbText);
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid c.color(cbBorder);
+  }
+
+  .tbody tr td .btn {
+    width: 120px;
+    text-decoration: none;
+    line-height: 35px;
+    display: inline-block;
+    font-weight: medium;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    font-size: 14px;
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .table thead {
+    display: none;
+  }
+  .table {
+    tbody tr td {
+      box-shadow: none;
+      display: block;
+      padding-right: 100%;
+    }
+    tr {
+      box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+      border-bottom: 1px solid c.color(cbText);
+      margin-bottom: 15px;
+    }
+  }
+  .table tbody tr td {
+    text-align: right;
+    padding-left: 100%;
+    margin: 0.2rem;
+    position: relative;
+  }
+  .table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    // width: 100%;
+    // padding-right: 100%;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .rows_count {
+    white-space: nowrap;
+  }
+
+  // .table,
+  // .table tbody,
+  // .table tr,
+  // .table td {
+  //   display: block;
+  //   width: 100%;
+  // }
+  // .table tr {
+  //   margin-bottom: 15px;
+  // }
+  // .table tbody tr td {
+  //   text-align: right;
+  //   padding-left: 50%;
+  //   position: relative;
+  // }
+}
+
+.pagination {
+  margin: 0;
+}
+
+.pagination li:hover {
+  cursor: pointer;
+}
+
+.header-wrap {
+  padding: 30px 0;
+}
+
+.num_rows {
+  width: 20%;
+  float: left;
+}
+.pagination-container {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: none;
+}
+
+.arrow\:text {
+  display: block;
+  // vertical-align: middle;
+  font-size: 14px;
+}
+
+.pagination {
+  --size: 32px;
+  --margin: 6px;
+  margin: 0 var(--margin);
+  border-radius: 6px;
+  color: c.color(cbSecondary);
+  // background: rgba(33, 63, 125, 0.1);
+  max-width: auto;
+  min-width: var(--size);
+  height: var(--size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0 6px;
+  @media (hover: hover) {
+    &:hover {
+      // ose darken qysh te dush
+      background: lighten(#202020, 3%);
+    }
+  }
+  &:active {
+    background: lighten(#202020, 3%);
+  }
+}
+
+.pagination\:number {
+  --size: 32px;
+  --margin: 6px;
+  margin: 0 var(--margin);
+  border-radius: 6px;
+  background: rgba(33, 63, 125, 0.1);
+  max-width: auto;
+  min-width: var(--size);
+  height: var(--size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0 6px;
+  @media (hover: hover) {
+    &:hover {
+      // ose darken qysh te dush
+      background: lighten(#202020, 3%);
+    }
+  }
+  &:active {
+    background: lighten(#202020, 3%);
+  }
+}
+
+.pagination\:active {
+  background: lighten(#202020, 3%);
+  position: relative;
+}
+
+.nums_grey {
+  background: rgba(33, 63, 125, 0.1);
+  border-radius: 4px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.rows_count {
+  width: 20%;
+  margin-right: 38rem;
+  // float: right;
+  // text-align: left;
+  color: c.color(cbSecondary);
+}

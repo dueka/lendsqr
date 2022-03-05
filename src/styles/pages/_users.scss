@@ -1,0 +1,109 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/colors" as c;
+@use "../base/typography";
+.users {
+  width: calc(100vw - 20rem);
+  margin-left: auto;
+  margin-top: 9rem;
+  &__center {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+  }
+
+  &-header {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28px;
+    font-style: normal;
+    color: c.color(cbText);
+    margin-top: 2rem;
+  }
+
+  &-card {
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    display: flex;
+    flex-direction: column;
+    //   align-items: center;
+    width: 240px;
+    height: 160px;
+    justify-content: center;
+    box-sizing: border-box;
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    flex-basis: 200px;
+    flex-shrink: 1;
+    flex-grow: 1;
+
+    p {
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: c.color(cbSecondary);
+      padding-top: 0;
+      margin-top: -1rem;
+      margin-left: 2rem;
+    }
+
+    h4 {
+      font-size: 24px;
+      line-height: 28px;
+      font-weight: 600;
+      font-size: normal;
+      text-transform: uppercase;
+      color: c.color(cbText);
+      padding-top: 0;
+      margin-top: 0.6rem;
+      margin-left: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .users {
+    margin: 0;
+    padding-left: 3rem;
+    padding-top: 3rem;
+
+    &-header {
+      font-size: 18px;
+      margin-top: 1.2rem;
+    }
+
+    &__center {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      width: 20rem;
+      overflow: scroll;
+      gap: 1rem;
+    }
+
+    &-card {
+      padding: 0.5rem;
+      height: 5rem;
+      width: calc(100vw - 16rem);
+      img {
+        max-width: 20px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      p {
+        margin: 0;
+        padding: 0;
+        font-size: 6px;
+        font-weight: 700;
+      }
+      h4 {
+        margin: 0;
+        padding: 0;
+        font-size: 10px;
+      }
+    }
+
+    &-center {
+    }
+  }
+}

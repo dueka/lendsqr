@@ -1,0 +1,26 @@
+$colors: (
+  cbWhite: #ffffff,
+  cbPrimary: #39cdcc,
+  cbPrimary-100: rgba(57, 205, 205, 0.027),
+  cbPrimary-200: #f5f5f7,
+  cbBorder: rgba(33, 63, 125, 0.1),
+  cbSecondary: #545f7d,
+  cbSecondary-100: #dddfe5,
+  cbRed: #e4033b,
+  cbRed-100: #a79499,
+  cbText: #213f7d,
+  cbText-200: #e9ecf2,
+  cbText-100: #dadfe9,
+  cbGrey: #7f7f7f,
+  cbOrange: #f9a000,
+  cbGrey-100: #d1d5db,
+  cbBlack: #333333,
+);
+@function color($key) {
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+
+  @warn "unknown `#{$key}` in $colors.";
+  @return null;
+}

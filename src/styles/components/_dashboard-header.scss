@@ -1,0 +1,156 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/colors" as c;
+@use "../base/typography";
+
+.hide-nav {
+  display: none;
+}
+
+.header {
+}
+
+.header__column {
+  display: flex;
+  padding: 1.5rem;
+  background-color: white;
+  box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+  z-index: 2;
+  top: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.header-logo {
+  @include m.distinctSize(160px);
+}
+
+// Search bar component on the admin list modal
+.header-search {
+  border: 1px solid c.color(cbText-100);
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin-left: 6rem;
+  height: 2.2rem;
+  &-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+
+    input {
+      text-align: left;
+      color: c.color(cbSecondary);
+      border-style: hidden;
+      width: 18rem;
+      &::placeholder {
+        padding-left: 1rem;
+        color: c.color(cbText-100);
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 14px;
+        border: 0px;
+      }
+    }
+  }
+  &-icon {
+    margin: 0;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding-top: 10px;
+    padding-bottom: 3px;
+    background-color: c.color(cbPrimary);
+    svg {
+      width: 3rem;
+      fill: c.color(white);
+      stroke: c.color(white);
+    }
+  }
+}
+
+.header-avatar {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+  padding-right: 2rem;
+
+  &-img {
+    margin-right: 0.5rem;
+  }
+  &__icon {
+    margin-right: 2rem;
+    a {
+      text-decoration-line: underline;
+      line-height: 19px;
+      font-size: 16px;
+      font-weight: normal;
+      font-style: normal;
+      color: c.color(cbText);
+    }
+  }
+
+  h5 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: c.color(cbText);
+    font-style: normal;
+  }
+}
+
+.header-avatar-img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 970px) {
+  .header-search {
+    margin-left: 1rem;
+    height: 1.3rem;
+    &-icon {
+      margin: 0;
+      padding: 0;
+    }
+
+    &-body {
+      input {
+        width: 3rem;
+        &::placeholder {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+  .header-avatar-img {
+    width: 20px;
+  }
+  .header-avatar {
+    h5 {
+      font-size: 8px;
+    }
+  }
+  .header-avatar__icon {
+    margin-left: -1rem;
+    padding: 0;
+    a {
+      font-size: 12px;
+      margin-left: 0.5rem;
+    }
+
+    svg {
+      width: 1rem;
+    }
+  }
+  .header__column {
+    box-shadow: none;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    // width: 20rem;
+    padding: 0.4rem;
+  }
+
+  .header-logo {
+    @include m.distinctSize(50px);
+  }
+}
